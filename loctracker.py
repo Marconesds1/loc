@@ -296,10 +296,10 @@ def main():
     option()
     time.sleep(1)
     try:
-        opt = int(input(f"{Wh}\n [ + ] {Gr}Select Option : {Wh}"))
+        opt = int(input(f"{Wh}\n [ + ] {Gr}SELECIONE UMA OPCAO : {Wh}"))
         execute_option(opt)
     except ValueError:
-        print(f'\n{Wh}[ {Re}! {Wh}] {Re}Please input number')
+        print(f'\n{Wh}[ {Re}! {Wh}] {Re}POR FAVOR DIGITE UM NÚMERO')
         time.sleep(2)
         main()
 
@@ -312,4 +312,5 @@ if __name__ == '__main__':
         time.sleep(2)
 
         exit()
+
 
