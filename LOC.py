@@ -266,6 +266,7 @@ def run_banner():
     clear()
     time.sleep(1)
     stderr.writelines(f"""{Wh}
+    
               MARCONES_MS
       
 [ SYSTEM BOOT: MARCONES_MS_TRACKER ]
@@ -303,4 +304,5 @@ if __name__ == '__main__':
         print(f'\n{Wh}[ {Re}! {Wh}] {Re}Exit')
         time.sleep(2)
         exit()
+
 
