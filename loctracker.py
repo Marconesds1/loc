@@ -254,9 +254,17 @@ def option():
     # BANNER TOOLS
     clear()
     stderr.writelines(f"""
-   MARCONES_MS
-   MARCONES_MS
-   MARCONES_MS
+                MARCONES_MS
+      
+[ SYSTEM BOOT: MARCONES_MS_TRACKER ]
+------------------------------------
+> STATUS..... ACTIVE
+> AUTHOR..... @Marcones_ms
+> FUNCTION... IP Address Tracker
+> SECURITY... ENCRYPTED [███░░░]
+                       
+ TRACKER · SYSTEM ONLINE · V1.0
+------------------------------------
     """)
 
     stderr.writelines(f"\n\n\n{option_text()}")
@@ -302,4 +310,5 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         print(f'\n{Wh}[ {Re}! {Wh}] {Re}Exit')
         time.sleep(2)
+
         exit()
