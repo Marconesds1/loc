@@ -256,7 +256,7 @@ def option():
     stderr.writelines(f"""
                 MARCONES_MS
       
-[ SYSTEM BOOT: MARCONES_MS_TRACKER ]
+[ SYSTEM BOOT: MARCONES_MS ]
 ------------------------------------
 > STATUS..... ACTIVE
 > AUTHOR..... @Marcones_ms
@@ -276,7 +276,7 @@ def run_banner():
     stderr.writelines(f"""{Wh}
               MARCONES_MS
       
-[ SYSTEM BOOT: MARCONES_MS_TRACKER ]
+[ SYSTEM BOOT: MARCONES_MS ]
 ------------------------------------
 > STATUS..... ACTIVE
 > AUTHOR..... @Marcones_ms
@@ -312,3 +312,4 @@ if __name__ == '__main__':
         time.sleep(2)
 
         exit()
+
