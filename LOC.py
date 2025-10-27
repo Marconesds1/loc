@@ -33,7 +33,7 @@ def is_option(func):
 # FUNCTIONS FOR MENU
 @is_option
 def IP_Track():
-    ip = input(f"{Wh}\n Enter IP target : {Gr}")  # INPUT IP ADDRESS
+    ip = input(f"{Wh}\n DIGITE O IP: {Gr}")  # INPUT IP ADDRESS
     print()
     print(f' {Wh}============= {Gr}SHOW INFORMATION IP ADDRESS {Wh}=============')
     req_api = requests.get(f"http://ipwho.is/{ip}")  # API IPWHOIS.IS
@@ -74,7 +74,7 @@ def IP_Track():
 @is_option
 def phoneGW():
     User_phone = input(
-        f"\n {Wh}Enter phone number target {Gr}Ex [+6281xxxxxxxxx] {Wh}: {Gr}")  # INPUT NUMBER PHONE
+        f"\n {Wh}DIGITE O NÚMERO DE TELEFONE {Gr}Ex [+6281xxxxxxxxx] {Wh}: {Gr}")  # INPUT NUMBER PHONE
     default_region = "ID"  # DEFAULT NEGARA INDONESIA
 
     parsed_number = phonenumbers.parse(User_phone, default_region)  # VARIABLE PHONENUMBERS
@@ -90,7 +90,7 @@ def phoneGW():
     timezone1 = timezone.time_zones_for_number(parsed_number)
     timezoneF = ', '.join(timezone1)
 
-    print(f"\n {Wh}========== {Gr}SHOW INFORMATION PHONE NUMBERS {Wh}==========")
+    print(f"\n {Wh}========== {Gr}INFORMACOES DO NÚMERO DE TELEFONE {Wh}==========")
     print(f"\n {Wh}Location             :{Gr} {location}")
     print(f" {Wh}Region Code          :{Gr} {region_code}")
     print(f" {Wh}Timezone             :{Gr} {timezoneF}")
@@ -115,7 +115,7 @@ def phoneGW():
 @is_option
 def TrackLu():
     try:
-        username = input(f"\n {Wh}Enter Username : {Gr}")
+        username = input(f"\n {Wh}DIGITE O NOME DE USUARIO : {Gr}")
         results = {}
         social_media = [
             {"url": "https://www.facebook.com/{}", "name": "Facebook"},
@@ -149,12 +149,12 @@ def TrackLu():
             if response.status_code == 200:
                 results[site['name']] = url
             else:
-                results[site['name']] = (f"{Ye}Username not found {Ye}!")
+                results[site['name']] = (f"{Ye}USUARIO NAO ENCONTRADO {Ye}!")
     except Exception as e:
         print(f"{Re}Error : {e}")
         return
 
-    print(f"\n {Wh}========== {Gr}SHOW INFORMATION USERNAME {Wh}==========")
+    print(f"\n {Wh}========== {Gr}INFORMACOES DO NOME DO USUARIO {Wh}==========")
     print()
     for site, url in results.items():
         print(f" {Wh}[ {Gr}+ {Wh}] {site} : {Gr}{url}")
@@ -165,8 +165,8 @@ def showIP():
     respone = requests.get('https://api.ipify.org/')
     Show_IP = respone.text
 
-    print(f"\n {Wh}========== {Gr}SHOW INFORMATION YOUR IP {Wh}==========")
-    print(f"\n {Wh}[{Gr} + {Wh}] Your IP Adrress : {Gr}{Show_IP}")
+    print(f"\n {Wh}========== {Gr}INFORMACOES DO IP {Wh}==========")
+    print(f"\n {Wh}[{Gr} + {Wh}] SEU IP: {Gr}{Show_IP}")
     print(f"\n {Wh}==============================================")
 
 
@@ -174,28 +174,28 @@ def showIP():
 options = [
     {
         'num': 1,
-        'text': 'IP Tracker',
+        'text': 'LOCALIZAR IP',
         'func': IP_Track
     },
     {
         'num': 2,
-        'text': 'Show Your IP',
+        'text': 'VER SEU IP',
         'func': showIP
 
     },
     {
         'num': 3,
-        'text': 'Phone Number Tracker',
+        'text': 'LOCALIZAR NÚMERO DE TELEFONE',
         'func': phoneGW
     },
     {
         'num': 4,
-        'text': 'Username Tracker',
+        'text': 'VER REDES SOCIAIS PELO NOME DE USUARIO',
         'func': TrackLu
     },
     {
         'num': 0,
-        'text': 'Exit',
+        'text': 'SAIR',
         'func': exit
     }
 ]
@@ -224,7 +224,7 @@ def call_option(opt):
 def execute_option(opt):
     try:
         call_option(opt)
-        input(f'\n{Wh}[ {Gr}+ {Wh}] {Gr}Press enter to continue')
+        input(f'\n{Wh}[ {Gr}+ {Wh}] {Gr}PRESSIONE ENTER PARA CONTINUAR')
         main()
     except ValueError as e:
         print(e)
@@ -266,19 +266,19 @@ def run_banner():
     clear()
     time.sleep(1)
     stderr.writelines(f"""{Wh}
-         .-.
-       .'   `.          {Wh}--------------------------------
-       :g g   :         {Wh}| {Gr}MARCONES_MS - TRACKER - IP ADDRESS {Wh}|
-       : o    `.        {Wh}|       {Gr}@CODE BY MARCONES_MS      {Wh}|
-      :         ``.     {Wh}--------------------------------
-     :             `.
-    :  :         .   `.
-    :   :          ` . `.
-     `.. :            `. ``;
-        `:;             `:'
-           :              `.
-            `.              `.     .
-              `'`'`'`---..,___`;.-'
+              MARCONES_MS
+      
+[ SYSTEM BOOT: MARCONES_MS_TRACKER ]
+------------------------------------
+> STATUS..... ACTIVE
+> AUTHOR..... @Marcones_ms
+> FUNCTION... IP Address Tracker
+> SECURITY... ENCRYPTED [███░░░]
+                       
+ TRACKER · SYSTEM ONLINE · V1.0
+------------------------------------
+
+
         """)
     time.sleep(0.5)
 
